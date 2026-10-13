@@ -139,7 +139,7 @@
 "Possible" = "Möglich";
 "Preferences" = "Einstellungen";
 "Preferences..." = "Einstellungen...";
-"Quit System Monitor" = "Systemmonitor beenden";
+"Quit System Utilities" = "System Utilities beenden";
 "Ready for cleanup" = "Bereit zum Bereinigen";
 "Reclaim safety" = "Bereinigungssicherheit";
 "Reclaimed %@." = "%@ freigegeben.";
@@ -175,6 +175,7 @@
 "Spanish" = "Spanisch";
 "Startup" = "Start";
 "System Monitor" = "Systemmonitor";
+"System Utilities" = "System Utilities";
 "Tell me when cleanup is ready" = "Benachrichtigen, wenn eine Bereinigung bereit ist";
 "Temp %@" = "Temp %@";
 "Temperature" = "Temperatur";

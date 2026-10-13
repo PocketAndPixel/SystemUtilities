@@ -3,7 +3,7 @@
 set -eu
 
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-APP_NAME="System Monitor"
+APP_NAME="System Utilities"
 APP_PATH="$ROOT_DIR/dist/$APP_NAME.app"
 DMG_PATH="$ROOT_DIR/dist/$APP_NAME.dmg"
 STAGING_DIR="$ROOT_DIR/dist/dmg-root"

@@ -125,7 +125,7 @@ final class SystemMonitorModelTests: XCTestCase {
     }
 
     private func uniqueBundleId() -> String {
-        let bundleId = "dev.oleg-verhoglyad.SystemMonitorModelTests.\(UUID().uuidString)"
+        let bundleId = "com.pocketandpixel.SystemUtilitiesModelTests.\(UUID().uuidString)"
         bundleIds.append(bundleId)
         return bundleId
     }

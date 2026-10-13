@@ -33,8 +33,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = item.button {
             button.title = ""
             button.imagePosition = .imageOnly
-            button.toolTip = localization("System Monitor")
-            button.setAccessibilityLabel(localization("System Monitor"))
+            button.toolTip = localization("System Utilities")
+            button.setAccessibilityLabel(localization("System Utilities"))
             button.target = self
             button.action = #selector(statusItemClicked(_:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
@@ -140,7 +140,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(updateItem)
         menu.addItem(.separator())
         let quitItem = NSMenuItem(
-            title: localization("Quit System Monitor"),
+            title: localization("Quit System Utilities"),
             action: #selector(quit),
             keyEquivalent: "q"
         )
@@ -154,7 +154,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             ?? NSApp.applicationIconImage
             ?? NSImage(
                 systemSymbolName: "gauge.with.dots.needle.67percent",
-                accessibilityDescription: localization("System Monitor")
+                accessibilityDescription: localization("System Utilities")
             )
             ?? NSImage(size: NSSize(width: 18, height: 18))
         let copy = image.copy() as? NSImage ?? image
@@ -262,8 +262,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             selection: selection ?? composer.generalSettings.settings.language
         )
         if let button = statusItem?.button {
-            button.toolTip = localization("System Monitor")
-            button.setAccessibilityLabel(localization("System Monitor"))
+            button.toolTip = localization("System Utilities")
+            button.setAccessibilityLabel(localization("System Utilities"))
         }
         statusMenu = makeStatusMenu(localization: localization)
     }

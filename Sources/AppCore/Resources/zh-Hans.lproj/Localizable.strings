@@ -139,7 +139,7 @@
 "Possible" = "可能";
 "Preferences" = "偏好设置";
 "Preferences..." = "偏好设置...";
-"Quit System Monitor" = "退出系统监控";
+"Quit System Utilities" = "退出 System Utilities";
 "Ready for cleanup" = "可以清理";
 "Reclaim safety" = "清理安全性";
 "Reclaimed %@." = "已释放 %@。";
@@ -175,6 +175,7 @@
 "Spanish" = "西班牙语";
 "Startup" = "启动";
 "System Monitor" = "系统监控";
+"System Utilities" = "System Utilities";
 "Tell me when cleanup is ready" = "可以清理时通知我";
 "Temp %@" = "温度 %@";
 "Temperature" = "温度";

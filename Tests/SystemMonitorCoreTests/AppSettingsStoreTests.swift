@@ -82,7 +82,7 @@ final class AppSettingsStoreTests: XCTestCase {
     }
 
     private func uniqueBundleId() -> String {
-        let bundleId = "dev.oleg-verhoglyad.SystemMonitorTests.\(UUID().uuidString)"
+        let bundleId = "com.pocketandpixel.SystemUtilitiesTests.\(UUID().uuidString)"
         bundleIds.append(bundleId)
         return bundleId
     }
