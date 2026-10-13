@@ -3,9 +3,9 @@
 set -eu
 
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-APP_NAME="System Monitor"
-EXECUTABLE_NAME="SystemMonitor"
-APP_EXECUTABLE_NAME="System Monitor"
+APP_NAME="System Utilities"
+EXECUTABLE_NAME="SystemUtilities"
+APP_EXECUTABLE_NAME="System Utilities"
 CONFIGURATION="${CONFIGURATION:-release}"
 SIGN_IDENTITY="${SIGN_IDENTITY:--}"
 APP_PATH="$ROOT_DIR/dist/$APP_NAME.app"
@@ -16,7 +16,7 @@ FRAMEWORKS_PATH="$CONTENTS_PATH/Frameworks"
 BUILD_HOME="$ROOT_DIR/.build/package-home"
 MODULE_CACHE_PATH="$ROOT_DIR/.build/module-cache"
 DEFAULT_ICON_PATH="$ROOT_DIR/Packaging/AppIcon.icns"
-ENTITLEMENTS_PATH="$ROOT_DIR/Packaging/SystemMonitor.entitlements"
+ENTITLEMENTS_PATH="$ROOT_DIR/Packaging/SystemUtilities.entitlements"
 VERSION_FILE="$ROOT_DIR/VERSION"
 
 cd "$ROOT_DIR"
@@ -74,7 +74,10 @@ if [ -n "$SPARKLE_FRAMEWORK" ]; then
 fi
 
 for RESOURCE_BUNDLE in "$ROOT_DIR/.build/$CONFIGURATION"/*.bundle; do
-    if [ -d "$RESOURCE_BUNDLE" ]; then
+    # Newer SwiftPM (seen with Xcode 27) puts a bundle's files in Contents/Resources, not its root.
+    if [ -d "$RESOURCE_BUNDLE/Contents/Resources" ]; then
+        ditto "$RESOURCE_BUNDLE/Contents/Resources/" "$RESOURCES_PATH"
+    elif [ -d "$RESOURCE_BUNDLE" ]; then
         ditto "$RESOURCE_BUNDLE/" "$RESOURCES_PATH"
     fi
 done

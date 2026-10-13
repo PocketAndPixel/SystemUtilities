@@ -139,7 +139,7 @@
 "Possible" = "候補";
 "Preferences" = "環境設定";
 "Preferences..." = "環境設定...";
-"Quit System Monitor" = "System Monitorを終了";
+"Quit System Utilities" = "System Utilitiesを終了";
 "Ready for cleanup" = "クリーンアップ準備完了";
 "Reclaim safety" = "解放の安全性";
 "Reclaimed %@." = "%@を解放しました。";
@@ -175,6 +175,7 @@
 "Spanish" = "スペイン語";
 "Startup" = "起動";
 "System Monitor" = "システムモニター";
+"System Utilities" = "System Utilities";
 "Tell me when cleanup is ready" = "クリーンアップ準備完了時に通知";
 "Temp %@" = "温度 %@";
 "Temperature" = "温度";

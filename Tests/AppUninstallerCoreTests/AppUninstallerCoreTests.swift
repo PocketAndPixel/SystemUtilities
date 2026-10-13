@@ -45,14 +45,14 @@ final class AppUninstallerCoreTests: XCTestCase {
         _ = try makeApp(
             in: applicationsURL,
             name: "Self",
-            bundleIdentifier: "dev.oleg-verhoglyad.SystemMonitor"
+            bundleIdentifier: "com.pocketandpixel.SystemUtilities"
         )
         let brokenURL = applicationsURL.appendingPathComponent("Broken.app", isDirectory: true)
         try FileManager.default.createDirectory(at: brokenURL, withIntermediateDirectories: true)
 
         let scanner = InstalledAppsScanner(
             searchRoots: [applicationsURL],
-            ownBundleIdentifier: "dev.oleg-verhoglyad.SystemMonitor"
+            ownBundleIdentifier: "com.pocketandpixel.SystemUtilities"
         )
 
         let apps = try scanner.scan()
@@ -74,7 +74,7 @@ final class AppUninstallerCoreTests: XCTestCase {
 
         let scanner = InstalledAppsScanner(
             searchRoots: [applicationsURL],
-            ownBundleIdentifier: "dev.oleg-verhoglyad.SystemMonitor"
+            ownBundleIdentifier: "com.pocketandpixel.SystemUtilities"
         )
 
         let apps = try scanner.scan()

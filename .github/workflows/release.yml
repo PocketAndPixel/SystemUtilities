@@ -25,8 +25,8 @@ jobs:
     runs-on: macos-latest
 
     env:
-      APP_NAME: System Monitor
-      RELEASE_DMG: dist/System-Monitor.dmg
+      APP_NAME: System Utilities
+      RELEASE_DMG: dist/System-Utilities.dmg
       SIGN_IDENTITY: "Developer ID Application: Oleg Verkhohliad (A9N92VGA2M)"
 
     steps:
@@ -77,7 +77,7 @@ jobs:
           echo "DRAFT=$DRAFT" >> "$GITHUB_ENV"
           echo "RELEASE_NOTES_REF=$RELEASE_NOTES_REF" >> "$GITHUB_ENV"
           echo "SPARKLE_FEED_URL=https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/appcast.xml" >> "$GITHUB_ENV"
-          echo "DOWNLOAD_URL=https://github.com/${GITHUB_REPOSITORY}/releases/download/$TAG_NAME/System-Monitor.dmg" >> "$GITHUB_ENV"
+          echo "DOWNLOAD_URL=https://github.com/${GITHUB_REPOSITORY}/releases/download/$TAG_NAME/System-Utilities.dmg" >> "$GITHUB_ENV"
 
       - name: Update VERSION for manual release
         if: github.event_name == 'workflow_dispatch'
@@ -225,7 +225,7 @@ jobs:
       - name: Write release notes
         run: |
           {
-            echo "System Monitor $VERSION"
+            echo "System Utilities $VERSION"
             echo
             git log -1 --pretty=%B "$RELEASE_NOTES_REF"
           } > dist/release-notes.md

@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "SystemUtilitiesMacOS",
+    name: "SystemUtilities",
     defaultLocalization: "en",
     platforms: [
         .macOS(.v14)
     ],
     products: [
-        .executable(name: "SystemMonitor", targets: ["App"])
+        .executable(name: "SystemUtilities", targets: ["App"])
     ],
     dependencies: [
         .package(url: "https://github.com/sparkle-project/Sparkle", from: "2.9.1")

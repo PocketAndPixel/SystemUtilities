@@ -106,7 +106,7 @@ public struct LaunchAtLoginService: Sendable {
                 isEnabled: false,
                 canChange: true,
                 needsApproval: true,
-                message: "Allow System Monitor in Login Items."
+                message: "Allow System Utilities in Login Items."
             )
         case .notFound:
             return LaunchAtLoginStatus(

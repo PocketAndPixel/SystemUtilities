@@ -26,7 +26,7 @@ and preferences.
 
 ## Releases
 
-[Download it here](https://github.com/olegasd123/system-utilities-macos/tags)
+[Download it here](https://github.com/PocketAndPixel/SystemUtilities/releases)
 
 ## Features
 
@@ -93,7 +93,7 @@ and preferences.
 ## Run
 
 ```bash
-swift run SystemMonitor
+swift run SystemUtilities
 ```
 
 Click the menu bar item to open the popover. Use the tab icons to switch
@@ -119,7 +119,7 @@ Build a local `.app` bundle:
 scripts/build_app.sh
 ```
 
-This creates an ad-hoc signed app at `dist/System Monitor.app`. The version is
+This creates an ad-hoc signed app at `dist/System Utilities.app`. The version is
 read from `VERSION`. Use this build for local checks and direct sharing.
 
 Build a debug bundle:
@@ -157,7 +157,7 @@ scripts/build_app.sh
 Create a Sparkle appcast after the DMG is built:
 
 ```bash
-DOWNLOAD_URL="https://github.com/OWNER/REPO/releases/download/v0.1.0/System-Monitor.dmg" \
+DOWNLOAD_URL="https://github.com/OWNER/REPO/releases/download/v0.1.0/System-Utilities.dmg" \
 SPARKLE_PRIVATE_KEY_FILE="private/sparkle_private_key" \
 scripts/make_appcast.sh
 ```
@@ -179,7 +179,7 @@ You can also use `APPLE_ID`, `TEAM_ID`, and `APP_SPECIFIC_PASSWORD` instead of
 Use `DMG_PATH` to notarize a DMG at a custom path:
 
 ```bash
-DMG_PATH="/path/to/System Monitor.dmg" NOTARY_PROFILE="profile-name" scripts/notarize_dmg.sh
+DMG_PATH="/path/to/System Utilities.dmg" NOTARY_PROFILE="profile-name" scripts/notarize_dmg.sh
 ```
 
 ## Settings
@@ -187,7 +187,7 @@ DMG_PATH="/path/to/System Monitor.dmg" NOTARY_PROFILE="profile-name" scripts/not
 Settings are stored as JSON in:
 
 ```text
-~/Library/Application Support/dev.oleg-verhoglyad.SystemMonitor/settings.json
+~/Library/Application Support/com.pocketandpixel.SystemUtilities/settings.json
 ```
 
 The current settings format uses `version`, `general`, and `features` keys.
@@ -197,7 +197,7 @@ The app can still read older flat settings files.
 
 - Build the release from a clean tag.
 - Create the DMG.
-- Check that the GitHub Release has `System-Monitor.dmg` and `appcast.xml`.
+- Check that the GitHub Release has `System-Utilities.dmg` and `appcast.xml`.
 - Install the app from the DMG.
 - Check the first launch approval flow on a clean Mac.
 - Check the right-click menu item: `Check for Updates...`.

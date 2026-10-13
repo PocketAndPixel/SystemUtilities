@@ -139,7 +139,7 @@
 "Possible" = "Возможно";
 "Preferences" = "Настройки";
 "Preferences..." = "Настройки...";
-"Quit System Monitor" = "Выйти из Монитора системы";
+"Quit System Utilities" = "Выйти из System Utilities";
 "Ready for cleanup" = "Готово к очистке";
 "Reclaim safety" = "Безопасность очистки";
 "Reclaimed %@." = "Освобождено %@.";
@@ -175,6 +175,7 @@
 "Spanish" = "Испанский";
 "Startup" = "Запуск";
 "System Monitor" = "Монитор системы";
+"System Utilities" = "System Utilities";
 "Tell me when cleanup is ready" = "Сообщать, когда очистка готова";
 "Temp %@" = "Темп. %@";
 "Temperature" = "Температура";

@@ -134,8 +134,12 @@ public enum AppLanguage: String, Codable, CaseIterable, Identifiable, Sendable {
         return .english
     }
 
-    var resourceCode: String {
-        resolved.rawValue.lowercased()
+    /// SwiftPM keeps `pt-BR.lproj` with Xcode 27 but made it `pt-br.lproj` with older Xcode, and
+    /// bundle lookups are case-sensitive, so both spellings are tried.
+    var resourceCodes: [String] {
+        let code = resolved.rawValue
+        let lowercased = code.lowercased()
+        return code == lowercased ? [code] : [code, lowercased]
     }
 }
 
@@ -175,37 +179,20 @@ public struct AppLocalization: Equatable, Sendable {
     }
 
     private static func bundle(for language: AppLanguage) -> Bundle {
-        if let bundle = appBundle(for: language) {
-            return bundle
+        if Bundle.main.isPackagedApp {
+            return languageBundle(in: Bundle.main, for: language) ?? Bundle.main
         }
-
-        guard !Bundle.main.isPackagedApp else {
-            return Bundle.main
-        }
-
-        guard
-            let url = Bundle.module.url(
-                forResource: language.resourceCode,
-                withExtension: "lproj"
-            ),
-            let bundle = Bundle(url: url)
-        else {
-            return Bundle.module
-        }
-        return bundle
+        return languageBundle(in: Bundle.module, for: language) ?? Bundle.module
     }
 
-    private static func appBundle(for language: AppLanguage) -> Bundle? {
-        guard
-            Bundle.main.isPackagedApp,
-            let url = Bundle.main.url(
-                forResource: language.resourceCode,
-                withExtension: "lproj"
-            )
-        else {
-            return nil
+    private static func languageBundle(in bundle: Bundle, for language: AppLanguage) -> Bundle? {
+        for code in language.resourceCodes {
+            if let url = bundle.url(forResource: code, withExtension: "lproj"),
+               let languageBundle = Bundle(url: url) {
+                return languageBundle
+            }
         }
-        return Bundle(url: url)
+        return nil
     }
 }
 
