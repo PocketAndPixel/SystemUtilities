@@ -74,7 +74,10 @@ if [ -n "$SPARKLE_FRAMEWORK" ]; then
 fi
 
 for RESOURCE_BUNDLE in "$ROOT_DIR/.build/$CONFIGURATION"/*.bundle; do
-    if [ -d "$RESOURCE_BUNDLE" ]; then
+    # Newer SwiftPM (seen with Xcode 27) puts a bundle's files in Contents/Resources, not its root.
+    if [ -d "$RESOURCE_BUNDLE/Contents/Resources" ]; then
+        ditto "$RESOURCE_BUNDLE/Contents/Resources/" "$RESOURCES_PATH"
+    elif [ -d "$RESOURCE_BUNDLE" ]; then
         ditto "$RESOURCE_BUNDLE/" "$RESOURCES_PATH"
     fi
 done
